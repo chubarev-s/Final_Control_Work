@@ -26,7 +26,7 @@ string[] Gen1DArray(int len)
 
 
 //Метод печати одномерного массива
-void Print1Darray(int[] arr)
+void Print1Darray(string[] arr)
 {
 
     Console.Write("[");
@@ -37,4 +37,22 @@ void Print1Darray(int[] arr)
     Console.WriteLine(arr[arr.Length - 1] + "]");
 }
 
+//Метод подсчёта 
+void ElementCount(string[] arr, int len)
+{
+    int buf_len = 0;
+    string[] res = new string[len];
+    for(int i = 0; i<len; i++)
+    {
+        buf_len = arr[i].Length;  
+        if(buf_len <4)
+        {
+            res[i] = arr[i];
+        }
+    }
+    Print1Darray(res);
+}
 
+int len = ReadData("Введите длину массива");
+string[] Arr = Gen1DArray(len);
+ElementCount(Arr, len);
